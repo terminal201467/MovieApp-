@@ -21,6 +21,22 @@ class MovieAPI{
     static func configure(apikey:String){
         MovieAPI.shared = MovieAPI(apikey: apikey)
     }
+    
+    //MARK:-LoadAPIKey
+    static func readTheAPIKey(){
+        if let url = Bundle.main.url(forResource: "APIKey", withExtension: "bundle"),
+           let bundle = Bundle(url: url),
+           let path = bundle.path(forResource: "apikey", ofType: "txt"){
+            do {
+                let data = try String(contentsOfFile: path, encoding: .utf8)
+                let apiKey = data.components(separatedBy: .newlines).joined()
+                print("金鑰：\(apiKey)")
+                MovieAPI.configure(apikey: apiKey)
+            }catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
 
     //MARK:-Properties
     private var apikey:String
@@ -32,24 +48,27 @@ class MovieAPI{
     private func buildRequest(callBy:CallMethod) ->URLRequest{
         var components = URLComponents(string:baseURL)
         var parameter = callBy.parameters
-        parameter["appid"] = apikey
+        parameter["api-key"] = apikey
         components?.queryItems = parameter.map({URLQueryItem(name: $0.key, value: "\($0.value)")})
         return URLRequest(url:components!.url!, timeoutInterval: 10)
     }
     
     //GetData
     func getSearchData(callBy:CallMethod,completion:@escaping(Result<MovieData,Error>)->Void){
-        
         let request = buildRequest(callBy:callBy)
-        
-        URLSession.shared.dataTask(with: request){data,_,error in
+        print("GetAPI：\(request)")
+        URLSession.shared.dataTask(with: request){data,response,error in
             if let error = error{
                 completion(.failure(error))
-                return
             }
+            
+            if let response = response as? HTTPURLResponse{
+                print("\(response.statusCode)")
+            }
+            
             if let data = data{
                 do{
-                    let decode = try JSONDecoder().decode(MovieData.self, from: data)
+                    let decode = try JSONDecoder().decode(MovieData.self,from: data)
                     completion(.success(decode))
                 }catch{
                     completion(.failure(error))
@@ -59,26 +78,10 @@ class MovieAPI{
     }
 }
 
-func ReadTheAPIKey(){
-    if let url = Bundle.main.url(forResource: "APIKey", withExtension: "bundle"),
-       let bundle = Bundle(url: url),
-       let path = bundle.path(forResource: "apikey", ofType: "txt"){
-        do {
-            let data = try String(contentsOfFile: path, encoding: .utf8)
-            let apiKey = data.components(separatedBy: .newlines).joined()
-            print("金鑰：\(apiKey)")
-            MovieAPI.configure(apikey: apiKey)
-        }catch {
-            print(error.localizedDescription)
-        }
-    }
-    
-    
-}
+
 
 
 extension MovieAPI{
-    
     enum CallMethod{
         case criticsPick(String)
         case offSet(Int)

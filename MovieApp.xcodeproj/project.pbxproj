@@ -24,6 +24,9 @@
 		97FC89A92738FFD80083C927 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC89A82738FFD80083C927 /* PhotoCollectionViewCell.swift */; };
 		97FC89AB273900050083C927 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC89AA273900050083C927 /* PhotoTableViewCell.swift */; };
 		97FC89AD2739001F0083C927 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC89AC2739001F0083C927 /* ButtonTableViewCell.swift */; };
+		97FC89B027390FD10083C927 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC89AF27390FD10083C927 /* Header.swift */; };
+		97FC89B227390FDE0083C927 /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC89B127390FDE0083C927 /* Footer.swift */; };
+		97FC89B42739105B0083C927 /* NestedButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC89B32739105B0083C927 /* NestedButtonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,9 @@
 		97FC89A82738FFD80083C927 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		97FC89AA273900050083C927 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		97FC89AC2739001F0083C927 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
+		97FC89AF27390FD10083C927 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		97FC89B127390FDE0083C927 /* Footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
+		97FC89B32739105B0083C927 /* NestedButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedButtonTableViewCell.swift; sourceTree = "<group>"; };
 		DD305F9B709E4E2175958B18 /* Pods-MovieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieApp.release.xcconfig"; path = "Target Support Files/Pods-MovieApp/Pods-MovieApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +122,8 @@
 			children = (
 				97831FC12733D2BE0035493E /* MovieView.swift */,
 				97A135BF2734E351005A8840 /* MovieCollectionView.swift */,
+				97FC89AF27390FD10083C927 /* Header.swift */,
+				97FC89B127390FDE0083C927 /* Footer.swift */,
 				97831FC62733D59A0035493E /* TableViewCell */,
 			);
 			path = View;
@@ -154,6 +162,7 @@
 			children = (
 				97FC89AC2739001F0083C927 /* ButtonTableViewCell.swift */,
 				97FC89A52738FF630083C927 /* ButtonCollectionView.swift */,
+				97FC89B32739105B0083C927 /* NestedButtonTableViewCell.swift */,
 			);
 			path = ButtonTableViewCell;
 			sourceTree = "<group>";
@@ -270,7 +279,10 @@
 				97831F9F273222560035493E /* AppDelegate.swift in Sources */,
 				97831FA1273222560035493E /* SceneDelegate.swift in Sources */,
 				97831FC22733D2BE0035493E /* MovieView.swift in Sources */,
+				97FC89B227390FDE0083C927 /* Footer.swift in Sources */,
+				97FC89B42739105B0083C927 /* NestedButtonTableViewCell.swift in Sources */,
 				97FC89AB273900050083C927 /* PhotoTableViewCell.swift in Sources */,
+				97FC89B027390FD10083C927 /* Header.swift in Sources */,
 				97831FB32732242F0035493E /* Model.swift in Sources */,
 				97FC89A92738FFD80083C927 /* PhotoCollectionViewCell.swift in Sources */,
 				97831FB5273230320035493E /* MovieAPI.swift in Sources */,

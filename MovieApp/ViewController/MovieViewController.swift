@@ -26,24 +26,28 @@ class MovieViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
-        
-        ReadTheAPIKey()
-        MovieAPI.shared.getSearchData(callBy: .query("GodFather")){ Result in
+        ///LoadingAPIKey
+        MovieAPI.readTheAPIKey()
+        ///GetAPI
+        MovieAPI.shared.getSearchData(callBy: .query("godfather")){ Result in
             switch Result{
             case .success(let MovieData):
                 print("請求的電影資料：\(MovieData)")
                 self.movieArray.append(MovieData)
             case .failure(let InternetError):
-                print("錯誤訊息:\(InternetError)")
+                print("錯誤訊息:\(InternetError.localizedDescription)")
             }
         }
     }
-    
     
     //MARK:-SetTableView
     func setTableView(){
         movieView.tableView.delegate = self
         movieView.tableView.dataSource = self
+    }
+    
+    func setCollectionView(){
+        
     }
 }
 

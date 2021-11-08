@@ -15,33 +15,36 @@ struct webSite {
 //MARK:-MovieData
 struct MovieData:Decodable {
     let status:String
-    let copyRight:String
+    let copyright:String
     let has_more:Bool
-    let num_result:Int
+    let num_results:Int
     let results:[Results]
 }
 struct Results:Decodable {
     let display_title:String
     let mpaa_rating:String
-    let critic_pick:Int
+    let critics_pick:Int
     let byline:String
     let headline:String
     let summary_short:String
-    let publication_date:Date
-    let opening_updated:Date
+    
+    let publication_date:String
+    let opening_date:String?
+    let date_updated:String
+    
     let link:Link
-    let multimedia:Multimedia
+    let multimedia:Multimedia?
 }
 struct Link:Decodable {
     let type:String
-    let url:URL
-    let suggest_link_text:String
+    let url:String
+    let suggested_link_text:String
 }
 struct Multimedia:Decodable {
     let type:String
-    let src:URL
+    let src:String
     let height:Int
-    let weight:Int
+    let width:Int
 }
 
 //MARK:-InternetError
