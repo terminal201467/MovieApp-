@@ -25,7 +25,6 @@ class MovieViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setSearchBar()
         setTableView()
         
         ReadTheAPIKey()
@@ -40,10 +39,6 @@ class MovieViewController: UIViewController {
         }
     }
     
-    //MARK:-setSearchBar
-    func setSearchBar(){
-        let searchController = UISearchController()
-    }
     
     //MARK:-SetTableView
     func setTableView(){

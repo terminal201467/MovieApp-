@@ -16,11 +16,14 @@
 		97831FB7273231A30035493E /* AlamofireGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97831FB6273231A30035493E /* AlamofireGet.swift */; };
 		97831FC22733D2BE0035493E /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97831FC12733D2BE0035493E /* MovieView.swift */; };
 		97831FC92733D5C60035493E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97831FC82733D5C60035493E /* TableViewCell.swift */; };
-		97831FCB2733D5E70035493E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97831FCA2733D5E70035493E /* CollectionViewCell.swift */; };
 		97A135BE2734BF17005A8840 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 97A135BD2734BF17005A8840 /* Alamofire */; };
 		97A135C02734E351005A8840 /* MovieCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A135BF2734E351005A8840 /* MovieCollectionView.swift */; };
 		97A135C42736B097005A8840 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 97A135C32736B097005A8840 /* SnapKit */; };
 		97FC89822738AD1E0083C927 /* APIKey.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 97FC89812738AD1E0083C927 /* APIKey.bundle */; };
+		97FC89A62738FF630083C927 /* ButtonCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC89A52738FF630083C927 /* ButtonCollectionView.swift */; };
+		97FC89A92738FFD80083C927 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC89A82738FFD80083C927 /* PhotoCollectionViewCell.swift */; };
+		97FC89AB273900050083C927 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC89AA273900050083C927 /* PhotoTableViewCell.swift */; };
+		97FC89AD2739001F0083C927 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC89AC2739001F0083C927 /* ButtonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,9 +39,12 @@
 		97831FB6273231A30035493E /* AlamofireGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireGet.swift; sourceTree = "<group>"; };
 		97831FC12733D2BE0035493E /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
 		97831FC82733D5C60035493E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		97831FCA2733D5E70035493E /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		97A135BF2734E351005A8840 /* MovieCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionView.swift; sourceTree = "<group>"; };
 		97FC89812738AD1E0083C927 /* APIKey.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = APIKey.bundle; sourceTree = "<group>"; };
+		97FC89A52738FF630083C927 /* ButtonCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionView.swift; sourceTree = "<group>"; };
+		97FC89A82738FFD80083C927 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		97FC89AA273900050083C927 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		97FC89AC2739001F0083C927 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		DD305F9B709E4E2175958B18 /* Pods-MovieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieApp.release.xcconfig"; path = "Target Support Files/Pods-MovieApp/Pods-MovieApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,9 +134,28 @@
 			isa = PBXGroup;
 			children = (
 				97831FC82733D5C60035493E /* TableViewCell.swift */,
-				97831FCA2733D5E70035493E /* CollectionViewCell.swift */,
+				97FC89A72738FF9E0083C927 /* PhotoCollectonViewCell */,
+				97FC89AE2739002F0083C927 /* ButtonTableViewCell */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		97FC89A72738FF9E0083C927 /* PhotoCollectonViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				97FC89AA273900050083C927 /* PhotoTableViewCell.swift */,
+				97FC89A82738FFD80083C927 /* PhotoCollectionViewCell.swift */,
+			);
+			path = PhotoCollectonViewCell;
+			sourceTree = "<group>";
+		};
+		97FC89AE2739002F0083C927 /* ButtonTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				97FC89AC2739001F0083C927 /* ButtonTableViewCell.swift */,
+				97FC89A52738FF630083C927 /* ButtonCollectionView.swift */,
+			);
+			path = ButtonTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,15 +261,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97831FCB2733D5E70035493E /* CollectionViewCell.swift in Sources */,
 				97A135C02734E351005A8840 /* MovieCollectionView.swift in Sources */,
+				97FC89A62738FF630083C927 /* ButtonCollectionView.swift in Sources */,
+				97FC89AD2739001F0083C927 /* ButtonTableViewCell.swift in Sources */,
 				97831FA3273222560035493E /* MovieViewController.swift in Sources */,
 				97831FB7273231A30035493E /* AlamofireGet.swift in Sources */,
 				97831FC92733D5C60035493E /* TableViewCell.swift in Sources */,
 				97831F9F273222560035493E /* AppDelegate.swift in Sources */,
 				97831FA1273222560035493E /* SceneDelegate.swift in Sources */,
 				97831FC22733D2BE0035493E /* MovieView.swift in Sources */,
+				97FC89AB273900050083C927 /* PhotoTableViewCell.swift in Sources */,
 				97831FB32732242F0035493E /* Model.swift in Sources */,
+				97FC89A92738FFD80083C927 /* PhotoCollectionViewCell.swift in Sources */,
 				97831FB5273230320035493E /* MovieAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

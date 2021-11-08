@@ -31,7 +31,9 @@ class MovieView: UIView {
     
     //SnapKit..AutoLayout
     func autoLayout(){
-        
+        tableView.snp.makeConstraints{ (make) ->Void in
+            make.top.bottom.left.right.equalToSuperview()
+        }
         
     }
 

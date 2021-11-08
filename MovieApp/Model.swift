@@ -53,3 +53,10 @@ enum InternetError:Error{
 }
 
 
+//MARK:-EnumTheSection
+///notTotallySetUp
+enum Movie{
+    case game
+    case reviewer
+}
+
