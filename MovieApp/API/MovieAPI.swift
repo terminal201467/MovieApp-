@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 //https://api.nytimes.com/svc/movies/v2/reviews/search.json
 class MovieAPI{
@@ -30,7 +31,6 @@ class MovieAPI{
             do {
                 let data = try String(contentsOfFile: path, encoding: .utf8)
                 let apiKey = data.components(separatedBy: .newlines).joined()
-                print("金鑰：\(apiKey)")
                 MovieAPI.configure(apikey: apiKey)
             }catch {
                 print(error.localizedDescription)
@@ -40,7 +40,6 @@ class MovieAPI{
 
     //MARK:-Properties
     private var apikey:String
-    
     private let baseURL = "https://api.nytimes.com/svc/movies/v2/reviews/search.json"
     
     //MARK:-Methods
@@ -56,16 +55,10 @@ class MovieAPI{
     //GetData
     func getSearchData(callBy:CallMethod,completion:@escaping(Result<MovieData,Error>)->Void){
         let request = buildRequest(callBy:callBy)
-        print("GetAPI：\(request)")
-        URLSession.shared.dataTask(with: request){data,response,error in
+        URLSession.shared.dataTask(with: request){data,_,error in
             if let error = error{
                 completion(.failure(error))
             }
-            
-            if let response = response as? HTTPURLResponse{
-                print("\(response.statusCode)")
-            }
-            
             if let data = data{
                 do{
                     let decode = try JSONDecoder().decode(MovieData.self,from: data)
@@ -76,10 +69,8 @@ class MovieAPI{
             }
         }.resume()
     }
-}
-
-
-
+        
+    }
 
 extension MovieAPI{
     enum CallMethod{

@@ -8,13 +8,14 @@
 import Foundation
 import Alamofire
 
-class AlamofireMovieGet {
+class AlamofirePhotoGet {
     
-    static var shared:AlamofireMovieGet!
+    static var shared:AlamofirePhotoGet = .init()
     
-    func MovieDataGet(){
-        AF.request("https://api.nytimes.com").response{ response in
+    func MovieDataGet(url:String){
+        AF.request(url).response{ response in
             debugPrint(response)
+            
             
         }
     }

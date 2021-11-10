@@ -12,7 +12,8 @@ class MovieView: UIView {
 
     let tableView:UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(PhotoTableViewCell.self, forCellReuseIdentifier: PhotoTableViewCell.identifier)
+        tableView.tableFooterView = Footer()
         tableView.separatorStyle = .singleLine
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -34,7 +35,6 @@ class MovieView: UIView {
         tableView.snp.makeConstraints{ (make) ->Void in
             make.top.bottom.left.right.equalToSuperview()
         }
-        
     }
 
 }

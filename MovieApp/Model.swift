@@ -37,12 +37,12 @@ struct Results:Decodable {
 }
 struct Link:Decodable {
     let type:String
-    let url:String
+    let url:URL
     let suggested_link_text:String
 }
 struct Multimedia:Decodable {
     let type:String
-    let src:String
+    let src:URL
     let height:Int
     let width:Int
 }
