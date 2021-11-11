@@ -7,13 +7,12 @@
 
 import UIKit
 import SnapKit
-import Kingfisher
 
 class PhotoCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "PhotoCollctionCell"
+    static let identifier = "PhotoCollectionCell"
     
-    let imageView:UIImageView = {
+    var imageView:UIImageView = {
        var imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
@@ -22,19 +21,21 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    let label:UILabel = {
-        var label = UILabel()
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 20)
-        label.textAlignment = .center
-        label.numberOfLines = 1
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
+//    let label:UILabel = {
+//        var label = UILabel()
+//        label.textColor = .black
+//        label.font = UIFont.systemFont(ofSize: 20)
+//        label.textAlignment = .center
+//        label.numberOfLines = 1
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//        return label
+//    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
+        ///why not trigger......
         contentView.addSubview(imageView)
+//        contentView.addSubview(stackView)
         autoLayout()
     }
     
@@ -46,9 +47,5 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         imageView.snp.makeConstraints{(mask)->Void in
             mask.top.bottom.left.right.equalToSuperview()
         }
-    }
-    
-    func configuration(MovieData:MovieData){
-//        imageView = MovieData.results.map{$0.multimedia?.src}
     }
 }

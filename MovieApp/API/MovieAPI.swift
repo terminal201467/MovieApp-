@@ -66,6 +66,8 @@ class MovieAPI{
                 }catch{
                     completion(.failure(error))
                 }
+            } else {
+                completion(.failure(InternetError.invalidData))
             }
         }.resume()
     }

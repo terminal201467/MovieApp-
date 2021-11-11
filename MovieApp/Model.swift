@@ -19,32 +19,35 @@ struct MovieData:Decodable {
     let has_more:Bool
     let num_results:Int
     let results:[Results]
-}
-struct Results:Decodable {
-    let display_title:String
-    let mpaa_rating:String
-    let critics_pick:Int
-    let byline:String
-    let headline:String
-    let summary_short:String
     
-    let publication_date:String
-    let opening_date:String?
-    let date_updated:String
-    
-    let link:Link
-    let multimedia:Multimedia?
-}
-struct Link:Decodable {
-    let type:String
-    let url:URL
-    let suggested_link_text:String
-}
-struct Multimedia:Decodable {
-    let type:String
-    let src:URL
-    let height:Int
-    let width:Int
+    struct Results:Decodable {
+        let display_title:String
+        let mpaa_rating:String
+        let critics_pick:Int
+        let byline:String
+        let headline:String
+        let summary_short:String
+        
+        let publication_date:String
+        let opening_date:String?
+        let date_updated:String
+        
+        let link:Link
+        let multimedia:Multimedia?
+    }
+    struct Link:Decodable {
+        let type:String
+        let url:URL
+        let suggested_link_text:String
+    }
+    struct Multimedia:Decodable {
+        let type:String
+        let src:URL
+        let height:Int
+        let width:Int
+    }
+
+   
 }
 
 //MARK:-InternetError

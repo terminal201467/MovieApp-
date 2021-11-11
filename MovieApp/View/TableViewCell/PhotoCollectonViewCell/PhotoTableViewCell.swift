@@ -16,7 +16,8 @@ class PhotoTableViewCell: UITableViewCell {
         var layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier:PhotoCollectionViewCell.identifier)
+        collectionView.register(PhotoCollectionViewCell.self,
+                                forCellWithReuseIdentifier:PhotoCollectionViewCell.identifier)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()

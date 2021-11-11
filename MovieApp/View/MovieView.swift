@@ -15,10 +15,10 @@ class MovieView: UIView {
         tableView.register(PhotoTableViewCell.self, forCellReuseIdentifier: PhotoTableViewCell.identifier)
         tableView.tableFooterView = Footer()
         tableView.separatorStyle = .singleLine
+        tableView
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,8 +32,8 @@ class MovieView: UIView {
     
     //SnapKit..AutoLayout
     func autoLayout(){
-        tableView.snp.makeConstraints{ (make) ->Void in
-            make.top.bottom.left.right.equalToSuperview()
+        tableView.snp.makeConstraints{ (mask) ->Void in
+            mask.top.bottom.left.right.equalToSuperview()
         }
     }
 

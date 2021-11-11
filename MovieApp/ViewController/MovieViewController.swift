@@ -13,10 +13,10 @@ class MovieViewController: UIViewController {
     //MARK:-Properties
     ///View
     let movieView:MovieView = .init()
-    
+    ///collectionViewCell
     let photoTableCollectionViewCell:PhotoTableViewCell = .init()
     ///movieDataArray
-    var movieArray:[MovieData] = []
+    let database = MovieDatabase()
     
     //MARK:-LifeCycle
     
@@ -31,17 +31,14 @@ class MovieViewController: UIViewController {
         setNavigationBar()
         setCollectionView()
         ///LoadingAPIKey
-        MovieAPI.readTheAPIKey()
-        ///GetAPI
-        MovieAPI.shared.getSearchData(callBy: .query("godfather")){ Result in
-            switch Result{
-            case .success(let MovieData):
-                self.movieArray.append(MovieData)
-                print("存進的陣列：\(self.movieArray)")
-            case .failure(let InternetError):
-                print("錯誤訊息:\(InternetError.localizedDescription)")
-            }
+        database.valueChanged = {
+            self.movieView.tableView.reloadData()
         }
+        database.onError = { error in
+            print(error)
+        }
+        database.loadData()
+        
     }
     //MARK:-setNavigationBar
     func setNavigationBar(){
@@ -64,29 +61,32 @@ class MovieViewController: UIViewController {
 extension MovieViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movieArray.count
+        return database.numberOfSection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableViewCell.identifier, for: indexPath) as! PhotoTableViewCell
-        ///need to custom a cell transe to a collectionView
         cell.backgroundColor = .blue
-        
+
         return cell
     }
 }
 
-//MARK:-setCollection
+//MARK:-setCollectionView
 extension MovieViewController:UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movieArray.map{$0.results}.count
+        return database.numberOfRowInSection(section)
     }
     
+    //Didn't Trigger
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        ///not trigger......
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
         ///WhenCanGetThePhotoAndStore
-        let photoURL = URL(string:"\(movieArray.map{$0.results}[indexPath.item].map{$0.multimedia?.src})")
-        print("SRC:\(photoURL)")
+        let movie = database.getMovie(at: indexPath)
+        let photoURL = movie.multimedia?.src
+        print("下載網址:\(photoURL)")
+        ///Now the most important is that How to download the photo to local
         cell.imageView.kf.setImage(with:photoURL)
         cell.imageView.kf.indicatorType = .activity
         return cell

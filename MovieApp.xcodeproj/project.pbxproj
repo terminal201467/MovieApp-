@@ -27,6 +27,7 @@
 		97FC89B227390FDE0083C927 /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC89B127390FDE0083C927 /* Footer.swift */; };
 		97FC89B42739105B0083C927 /* NestedButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC89B32739105B0083C927 /* NestedButtonTableViewCell.swift */; };
 		97FC89B7273A01D10083C927 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 97FC89B6273A01D10083C927 /* Kingfisher */; };
+		97FC89B9273CE6920083C927 /* MovieDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC89B8273CE6920083C927 /* MovieDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		97FC89AF27390FD10083C927 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		97FC89B127390FDE0083C927 /* Footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
 		97FC89B32739105B0083C927 /* NestedButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedButtonTableViewCell.swift; sourceTree = "<group>"; };
+		97FC89B8273CE6920083C927 /* MovieDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDatabase.swift; sourceTree = "<group>"; };
 		DD305F9B709E4E2175958B18 /* Pods-MovieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieApp.release.xcconfig"; path = "Target Support Files/Pods-MovieApp/Pods-MovieApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				97831FA2273222560035493E /* MovieViewController.swift */,
+				97FC89B8273CE6920083C927 /* MovieDatabase.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				97FC89AD2739001F0083C927 /* ButtonTableViewCell.swift in Sources */,
 				97831FA3273222560035493E /* MovieViewController.swift in Sources */,
 				97831FB7273231A30035493E /* AlamofireGet.swift in Sources */,
+				97FC89B9273CE6920083C927 /* MovieDatabase.swift in Sources */,
 				97831FC92733D5C60035493E /* TableViewCell.swift in Sources */,
 				97831F9F273222560035493E /* AppDelegate.swift in Sources */,
 				97831FA1273222560035493E /* SceneDelegate.swift in Sources */,
