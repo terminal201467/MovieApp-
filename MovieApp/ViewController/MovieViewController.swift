@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class MovieViewController: UIViewController {
+class MovieViewController: UIViewController, UICollectionViewDelegate {
     
     //MARK:-Properties
     ///View
@@ -32,7 +32,9 @@ class MovieViewController: UIViewController {
         setCollectionView()
         ///LoadingAPIKey
         database.valueChanged = {
-            self.movieView.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.movieView.tableView.reloadData()
+            }
         }
         database.onError = { error in
             print(error)
@@ -66,29 +68,30 @@ extension MovieViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableViewCell.identifier, for: indexPath) as! PhotoTableViewCell
-        cell.backgroundColor = .blue
-
         return cell
     }
 }
 
 //MARK:-setCollectionView
-extension MovieViewController:UICollectionViewDelegate,UICollectionViewDataSource{
+extension MovieViewController:UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width/2, height: collectionView.frame.height/2)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return database.numberOfRowInSection(section)
     }
     
-    //Didn't Trigger
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         ///not trigger......
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
         ///WhenCanGetThePhotoAndStore
+        cell.imageView.image = UIImage(named: "photo.png")
+        
         let movie = database.getMovie(at: indexPath)
         let photoURL = movie.multimedia?.src
         print("下載網址:\(photoURL)")
         ///Now the most important is that How to download the photo to local
-        cell.imageView.kf.setImage(with:photoURL)
-        cell.imageView.kf.indicatorType = .activity
         return cell
     }
 }

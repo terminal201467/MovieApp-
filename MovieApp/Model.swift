@@ -46,8 +46,6 @@ struct MovieData:Decodable {
         let height:Int
         let width:Int
     }
-
-   
 }
 
 //MARK:-InternetError

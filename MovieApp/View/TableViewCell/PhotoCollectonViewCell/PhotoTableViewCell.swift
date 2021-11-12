@@ -16,19 +16,18 @@ class PhotoTableViewCell: UITableViewCell {
         var layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(PhotoCollectionViewCell.self,
-                                forCellWithReuseIdentifier:PhotoCollectionViewCell.identifier)
+        collectionView.register(PhotoCollectionViewCell.self,forCellWithReuseIdentifier:PhotoCollectionViewCell.identifier)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
-        addSubview(collectionView)
+        contentView.addSubview(collectionView)
         autoLayout()
     }
     
-    required init?(coder: NSCoder) {
+    required init?(coder:NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -37,5 +36,5 @@ class PhotoTableViewCell: UITableViewCell {
             mask.top.bottom.right.left.equalToSuperview()
         }
     }
-    
 }
+
