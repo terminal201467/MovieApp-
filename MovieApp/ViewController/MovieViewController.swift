@@ -13,8 +13,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
     //MARK:-Properties
     ///View
     let movieView:MovieView = .init()
-    ///collectionViewCell
-    let photoTableCollectionViewCell:PhotoTableViewCell = .init()
+
     ///movieDataArray
     let database = MovieDatabase()
     
@@ -29,7 +28,6 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
         super.viewDidLoad()
         setTableView()
         setNavigationBar()
-        setCollectionView()
         ///LoadingAPIKey
         database.valueChanged = {
             DispatchQueue.main.async {
@@ -52,11 +50,6 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
         movieView.tableView.delegate = self
         movieView.tableView.dataSource = self
     }
-    //MARK:SetCollectionView
-    func setCollectionView(){
-        photoTableCollectionViewCell.collectionView.delegate = self
-        photoTableCollectionViewCell.collectionView.dataSource = self
-    }
 }
 
 //MARK:-setTableView
@@ -69,6 +62,14 @@ extension MovieViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableViewCell.identifier, for: indexPath) as! PhotoTableViewCell
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let cell = cell as? PhotoTableViewCell{
+            cell.collectionView.delegate = self
+            cell.collectionView.dataSource = self
+            cell.collectionView.reloadData()
+        }
     }
 }
 
@@ -83,15 +84,12 @@ extension MovieViewController:UICollectionViewDataSource,UICollectionViewDelegat
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        ///not trigger......
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
-        ///WhenCanGetThePhotoAndStore
-        cell.imageView.image = UIImage(named: "photo.png")
-        
         let movie = database.getMovie(at: indexPath)
         let photoURL = movie.multimedia?.src
         print("下載網址:\(photoURL)")
-        ///Now the most important is that How to download the photo to local
+        cell.imageView.kf.setImage(with: photoURL)
+        cell.imageView.kf.indicatorType = .activity
         return cell
     }
 }
