@@ -40,14 +40,14 @@ class MovieAPI{
 
     //MARK:-Properties
     private var apikey:String
-    private let baseURL = "https://api.nytimes.com/svc/movies/v2/reviews/search.json"
+    private let baseURL = "https://api.themoviedb.org/3/movie"
     
     //MARK:-Methods
     //BuildRequest
     private func buildRequest(callBy:CallMethod) ->URLRequest{
         var components = URLComponents(string:baseURL)
         var parameter = callBy.parameters
-        parameter["api-key"] = apikey
+        parameter["api_key"] = apikey
         components?.queryItems = parameter.map({URLQueryItem(name: $0.key, value: "\($0.value)")})
         return URLRequest(url:components!.url!, timeoutInterval: 10)
     }
@@ -76,51 +76,39 @@ class MovieAPI{
 
 extension MovieAPI{
     enum CallMethod{
-        case criticsPick(String)
-        case offSet(Int)
-        case openingDate(String)
-        case order(String)
-        case publicationDate(String)
-        case reviewer(String)
-        case query(String)
+        case releaseDateStart(String)
+        case releaseDateStop(String)
+        case primaryReleaseYear(String)
+        case sortBy(String)
+        case certificateCountry(String)
+        case certification(String)
+        case gener(Int)
+        case cast(Int)
+        case actorNumber(Int)
         
-        var parameters:[String:Any]{
+        var parameter:[String:Any]{
         switch self{
-        case .criticsPick(let criticPick):
-            return ["criticPick":criticPick]
-            
-        case .offSet(let offSet):
-            return ["offSet":offSet]
-            
-        case .openingDate(let openingDate):
-            return ["openingDate":openingDate]
-            
-        case .order(let order):
-            return ["order":order]
-            
-        case .publicationDate(let publicationDate):
-            return ["publicationDate":publicationDate]
-            
-        case .reviewer(let reviewer):
-            return ["reviewer":reviewer]
-            
-        case .query(let query):
-            return ["query":query]
+        case .releaseDateStart(let releaseDateStart):
+            return ["primary_release_date.gte":releaseDateStart]
+        case .releaseDateStop(let releaseDateStop):
+            return ["primary_release_date.lte":releaseDateStop]
+        case .primaryReleaseYear(let primaryReleaseYear):
+            return ["primary_release_year":primaryReleaseYear]
+        case .sortBy(let sortBy):
+            return ["sort_by":sortBy]
+        case .certificateCountry(let certificateCountry):
+            return ["certification_country":certificateCountry]
+        case .certification(let certification):
+            return ["certification.lte":certification]
+        case .gener(let gener):
+            return ["with_genres":gener]
+        case .cast(let cast):
+            return ["cast":cast]
+        case .actorNumber(let actorNumber):
+            return ["with_people":actorNumber]
             }
         }
     }
-    
-    enum reviewer:String{
-        case all = "all"
-        case full_time = "full-time"
-        case part_time = "part-time"
-    }
-    
-    enum type:String{
-        case all
-        case picks
-    }
-    
 }
 
 

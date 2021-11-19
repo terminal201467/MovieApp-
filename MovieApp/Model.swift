@@ -7,11 +7,6 @@
 
 import Foundation
 
-struct webSite {
-    var url = ""
-    var apiKey = "D6Tl9AQ6SxnWJrHCmlJI7RUSjoxQayLe"
-}
-
 //MARK:-MovieData
 struct MovieData:Decodable {
     let status:String
@@ -56,11 +51,4 @@ enum InternetError:Error{
     case invalidResponse
 }
 
-
-//MARK:-EnumTheSection
-///notTotallySetUp
-enum Movie{
-    case game
-    case reviewer
-}
 
