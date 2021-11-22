@@ -39,31 +39,24 @@ class MovieAPI{
 
     //MARK:-Properties
     private var apikey:String
-    private let baseURL = "https://api.themoviedb.org/3/movie"
+    private let baseURL = "https://api.themoviedb.org/3/discover/movie"
     
     //MARK:-Methods
     //BuildRequest
     //可以選擇性傳入多的parameter
-    ///
     
     //OneParameter
-    private func buildRequest(callBy:CallMethod...) ->URLRequest{
+    private func buildRequest(callBy:[CallMethod]) ->URLRequest{
         var components = URLComponents(string:baseURL)
-        //var parameters: [String : Any]
-        //read the callBy array
-        var parameter:[String:Any]
-        var parameter = callBy.map{$0.parameters}
-        
-        
-        components?.queryItems = parameter.map({URLQueryItem(name: $0.keys, value: "\($0.value)")})
+        var query:[String:Any] = [:]
+        callBy.map{$0.parameters.map{query[$0.key] = $0.value}}
+        query["api_key"] = apikey
+        components?.queryItems = query.map({URLQueryItem(name: $0.key, value: "\($0.value)")})
         return URLRequest(url:components!.url!, timeoutInterval: 10)
     }
     
-    
-    
-    
     //GetData
-    func getMovieData(callBy:CallMethod,completion:@escaping(Result<MovieData,Error>)->Void){
+    func getMovieData(callBy:CallMethod...,completion:@escaping(Result<MovieData,Error>)->Void){
         let request = buildRequest(callBy:callBy)
         print(request)
         URLSession.shared.dataTask(with: request){data,_,error in
@@ -72,6 +65,7 @@ class MovieAPI{
             }
             if let data = data{
                 do{
+//                    print(String(data: data, encoding: .utf8)!)
                     let decode = try JSONDecoder().decode(MovieData.self,from: data)
                     completion(.success(decode))
                 }catch{

@@ -9,25 +9,25 @@ import Foundation
 
 //MARK:-MovieData
 struct MovieData:Decodable {
-    let status:String
-    let copyright:String
-    let has_more:Bool
-    let num_results:Int
+    let status:String?
+    let copyright:String?
+    let has_more:Bool?
+    let num_results:Int?
     let results:[Results]
     
     struct Results:Decodable {
-        let display_title:String
-        let mpaa_rating:String
-        let critics_pick:Int
-        let byline:String
-        let headline:String
-        let summary_short:String
+        let display_title:String?
+        let mpaa_rating:String?
+        let critics_pick:Int?
+        let byline:String?
+        let headline:String?
+        let summary_short:String?
         
-        let publication_date:String
+        let publication_date:String?
         let opening_date:String?
-        let date_updated:String
+        let date_updated:String?
         
-        let link:Link
+        let link:Link?
         let multimedia:Multimedia?
     }
     struct Link:Decodable {
