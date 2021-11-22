@@ -21,11 +21,6 @@ class PhotoTableViewCell: UITableViewCell {
         return collectionView
     }()
     
-    func createCompositionalLayout()->UICollectionViewLayout{
-        let layout = UICollectionViewCompositionalLayout{ sectionIndex,layoutEnviront in
-            
-        }
-    }
     
     func createMoviePhotoSize()->NSCollectionLayoutSection{
         //Item

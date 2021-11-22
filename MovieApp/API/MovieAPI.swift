@@ -8,7 +8,6 @@
 import Foundation
 import Alamofire
 
-//https://api.nytimes.com/svc/movies/v2/reviews/search.json
 class MovieAPI{
     //MARK:-Singleton
     static var shared:MovieAPI!
@@ -44,17 +43,29 @@ class MovieAPI{
     
     //MARK:-Methods
     //BuildRequest
-    private func buildRequest(callBy:CallMethod) ->URLRequest{
+    //可以選擇性傳入多的parameter
+    ///
+    
+    //OneParameter
+    private func buildRequest(callBy:CallMethod...) ->URLRequest{
         var components = URLComponents(string:baseURL)
-        var parameter = callBy.parameters
-        parameter["api_key"] = apikey
-        components?.queryItems = parameter.map({URLQueryItem(name: $0.key, value: "\($0.value)")})
+        //var parameters: [String : Any]
+        //read the callBy array
+        var parameter:[String:Any]
+        var parameter = callBy.map{$0.parameters}
+        
+        
+        components?.queryItems = parameter.map({URLQueryItem(name: $0.keys, value: "\($0.value)")})
         return URLRequest(url:components!.url!, timeoutInterval: 10)
     }
     
+    
+    
+    
     //GetData
-    func getSearchData(callBy:CallMethod,completion:@escaping(Result<MovieData,Error>)->Void){
+    func getMovieData(callBy:CallMethod,completion:@escaping(Result<MovieData,Error>)->Void){
         let request = buildRequest(callBy:callBy)
+        print(request)
         URLSession.shared.dataTask(with: request){data,_,error in
             if let error = error{
                 completion(.failure(error))
@@ -71,8 +82,8 @@ class MovieAPI{
             }
         }.resume()
     }
-        
-    }
+    
+}
 
 extension MovieAPI{
     enum CallMethod{
@@ -84,9 +95,9 @@ extension MovieAPI{
         case certification(String)
         case gener(Int)
         case cast(Int)
-        case actorNumber(Int)
+        case actorNameNumber(Int)
         
-        var parameter:[String:Any]{
+        var parameters:[String:Any]{
         switch self{
         case .releaseDateStart(let releaseDateStart):
             return ["primary_release_date.gte":releaseDateStart]
@@ -104,8 +115,8 @@ extension MovieAPI{
             return ["with_genres":gener]
         case .cast(let cast):
             return ["cast":cast]
-        case .actorNumber(let actorNumber):
-            return ["with_people":actorNumber]
+        case .actorNameNumber(let actorNameNumber):
+            return ["with_people":actorNameNumber]
             }
         }
     }

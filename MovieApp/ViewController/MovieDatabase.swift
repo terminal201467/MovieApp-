@@ -20,7 +20,7 @@ class MovieDatabase {
     
     func loadData() {
         MovieAPI.readTheAPIKey()
-        MovieAPI.shared.getSearchData(callBy: .query("godfather")){ Result in
+        MovieAPI.shared.getMovieData(callBy: .releaseDateStart("2014-10-10")){ Result in
             switch Result{
             case .success(let movieData):
                 self.movies.append(movieData)
