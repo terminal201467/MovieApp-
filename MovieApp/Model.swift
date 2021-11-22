@@ -9,39 +9,21 @@ import Foundation
 
 //MARK:-MovieData
 struct MovieData:Decodable {
-    let status:String?
-    let copyright:String?
-    let has_more:Bool?
-    let num_results:Int?
-    let results:[Results]
+    var page:Int
+    var results:[Result]
     
-    struct Results:Decodable {
-        let display_title:String?
-        let mpaa_rating:String?
-        let critics_pick:Int?
-        let byline:String?
-        let headline:String?
-        let summary_short:String?
-        
-        let publication_date:String?
-        let opening_date:String?
-        let date_updated:String?
-        
-        let link:Link?
-        let multimedia:Multimedia?
-    }
-    struct Link:Decodable {
-        let type:String
-        let url:URL
-        let suggested_link_text:String
-    }
-    struct Multimedia:Decodable {
-        let type:String
-        let src:URL
-        let height:Int
-        let width:Int
+    struct Result:Decodable {
+        var adult:Bool
+        var backdrop_path:String
+        var original_language:String
+        var original_title:String
+        var overview:String
+        var popularity:Double
+        var poster_path:String
+        var release_date:String
     }
 }
+
 
 //MARK:-InternetError
 enum InternetError:Error{
@@ -51,4 +33,5 @@ enum InternetError:Error{
     case invalidResponse
 }
 
+let movieImageURL:String = ""
 

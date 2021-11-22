@@ -86,9 +86,13 @@ extension MovieViewController:UICollectionViewDataSource,UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
         let movie = database.getMovie(at: indexPath)
-        let photoURL = movie.multimedia?.src
-        print("下載網址:\(photoURL)")
-        cell.imageView.kf.setImage(with: photoURL)
+        let photo = movie.backdrop_path
+        let url = URL(string: "https://image.tmdb.org/t/p/w500" + photo)!
+        let displayTitle = movie.original_title
+        print("title:\(displayTitle)")
+        print("下載網址:\(photo)")
+        
+        cell.imageView.kf.setImage(with: url)
         cell.imageView.kf.indicatorType = .activity
         return cell
     }

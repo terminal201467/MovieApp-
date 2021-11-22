@@ -38,7 +38,7 @@ class MovieDatabase {
         return movies[section].results.count
     }
     
-    func getMovie(at indexPath: IndexPath) -> MovieData.Results {
+    func getMovie(at indexPath: IndexPath) -> MovieData.Result {
         return movies[indexPath.section].results[indexPath.row]
     }
     

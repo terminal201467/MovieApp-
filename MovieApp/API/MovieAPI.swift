@@ -58,7 +58,7 @@ class MovieAPI{
     //GetData
     func getMovieData(callBy:CallMethod...,completion:@escaping(Result<MovieData,Error>)->Void){
         let request = buildRequest(callBy:callBy)
-        print(request)
+//        print(request)
         URLSession.shared.dataTask(with: request){data,_,error in
             if let error = error{
                 completion(.failure(error))
