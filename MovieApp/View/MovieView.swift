@@ -15,7 +15,7 @@ class MovieView: UIView {
         tableView.register(PhotoTableViewCell.self, forCellReuseIdentifier: PhotoTableViewCell.identifier)
         tableView.tableFooterView = Footer()
         tableView.separatorStyle = .singleLine
-        tableView.rowHeight = 200
+        tableView.rowHeight = 300
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()

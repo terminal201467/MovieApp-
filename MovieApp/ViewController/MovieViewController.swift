@@ -76,7 +76,7 @@ extension MovieViewController:UITableViewDelegate,UITableViewDataSource{
 //MARK:-setCollectionView
 extension MovieViewController:UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/2, height: collectionView.frame.height/2)
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -86,12 +86,9 @@ extension MovieViewController:UICollectionViewDataSource,UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
         let movie = database.getMovie(at: indexPath)
-        let photo = movie.backdrop_path
+        let photo = movie.poster_path
         let url = URL(string: "https://image.tmdb.org/t/p/w500" + photo)!
-        let displayTitle = movie.original_title
-        print("title:\(displayTitle)")
-        print("下載網址:\(photo)")
-        
+        cell.movieTitle.text = movie.original_title
         cell.imageView.kf.setImage(with: url)
         cell.imageView.kf.indicatorType = .activity
         return cell

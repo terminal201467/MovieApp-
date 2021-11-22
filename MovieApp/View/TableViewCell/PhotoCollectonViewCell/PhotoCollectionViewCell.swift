@@ -16,16 +16,34 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     var imageView:UIImageView = {
        var imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 12
         return imageView
     }()
-
+    
+    var movieTitle:UILabel = {
+        var label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 2
+        label.font = UIFont.systemFont(ofSize: 20)
+        label.textColor = .white
+        return label
+    }()
+    
+    lazy var stackView:UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [imageView,movieTitle])
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.alignment = .center
+        return stackView
+    }()
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .cyan
         contentView.addSubview(imageView)
+        contentView.addSubview(movieTitle)
+        contentView.addSubview(stackView)
         autoLayout()
     }
     
@@ -34,7 +52,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     }
     
     func autoLayout(){
-        imageView.snp.makeConstraints{(mask)->Void in
+        stackView.snp.makeConstraints{(mask)->Void in
             mask.top.bottom.left.right.equalToSuperview()
         }
     }
