@@ -12,7 +12,7 @@ class MovieView: UIView {
 
     let tableView:UITableView = {
         let tableView = UITableView()
-        tableView.register(PhotoTableViewCell.self, forCellReuseIdentifier: PhotoTableViewCell.identifier)
+        tableView.register(PhotoTableViewCell.self, forCellReuseIdentifier: PhotoTableViewCell.reuseidentifier)
         tableView.tableFooterView = Footer()
         tableView.separatorStyle = .singleLine
         tableView.rowHeight = 300

@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class MovieViewController: UIViewController, UICollectionViewDelegate {
+class MovieViewController: UIViewController {
     
     //MARK:-Properties
     ///View
@@ -54,25 +54,25 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
 
 //MARK:-setTableView
 extension MovieViewController:UITableViewDelegate,UITableViewDataSource{
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return database.numberOfSection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableViewCell.identifier, for: indexPath) as! PhotoTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableViewCell.reuseidentifier, for: indexPath) as! PhotoTableViewCell
         return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let cell = cell as? PhotoTableViewCell{
-            cell.collectionView.delegate = self
-            cell.collectionView.dataSource = self
-            cell.collectionView.reloadData()
+        if indexPath.section == 0{
+            if let cell = cell as? PhotoTableViewCell{
+                cell.collectionView.delegate = self
+                cell.collectionView.dataSource = self
+                cell.collectionView.reloadData()
+            }
         }
     }
 }
-
 //MARK:-setCollectionView
 extension MovieViewController:UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -94,4 +94,3 @@ extension MovieViewController:UICollectionViewDataSource,UICollectionViewDelegat
         return cell
     }
 }
-

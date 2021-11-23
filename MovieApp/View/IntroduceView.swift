@@ -1,13 +1,13 @@
 //
-//  ButtonCollectionView.swift
+//  IntroduceView.swift
 //  MovieApp
 //
-//  Created by Jhen Mu on 2021/11/8.
+//  Created by Jhen Mu on 2021/11/23.
 //
 
 import UIKit
 
-class ButtonCollectionView: UIView {
+class IntroduceView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.

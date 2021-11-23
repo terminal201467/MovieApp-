@@ -10,7 +10,7 @@ import SnapKit
 
 class PhotoTableViewCell: UITableViewCell {
     
-    static let identifier = "PhotoCell"
+    static let reuseidentifier = "PhotoCell"
     
     var collectionView:UICollectionView = {
         var layout = UICollectionViewFlowLayout()

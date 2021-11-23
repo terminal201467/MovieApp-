@@ -16,10 +16,9 @@ class ButtonTableViewCell: UITableViewCell {
     let collectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(ButtonCollectionView.self,forCellWithReuseIdentifier: "Cell")
-        
+//        collectionView.register(SimpleTableView.self,forCellWithReuseIdentifier: "Cell")
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()

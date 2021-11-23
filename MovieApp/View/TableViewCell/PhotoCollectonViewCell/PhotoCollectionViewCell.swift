@@ -17,7 +17,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
        var imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        imageView.clipsToBounds = true
+        imageView.clipsToBounds = false
         imageView.layer.cornerRadius = 12
         return imageView
     }()
