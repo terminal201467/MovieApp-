@@ -34,8 +34,8 @@ class SimpleTableViewCell: UITableViewCell {
     }
     
     func autoLayout(){
-        
-        
+        collectionView.snp.makeConstraints{mask in
+            mask.top.bottom.right.left.equalToSuperview()
+        }
     }
-    
 }

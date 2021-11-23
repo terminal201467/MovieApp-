@@ -33,5 +33,5 @@ enum InternetError:Error{
     case invalidResponse
 }
 
-let movieImageURL:String = ""
+let movieImageURL:String = "https://image.tmdb.org/t/p/w500"
 
