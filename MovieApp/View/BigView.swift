@@ -12,8 +12,10 @@ class BigView: UIView {
     
     let tableView:UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(PhotoTableViewCell.self, forCellReuseIdentifier: PhotoTableViewCell.reuseidentifier)
         tableView.separatorStyle = .singleLine
+        tableView.rowHeight = 300
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
 

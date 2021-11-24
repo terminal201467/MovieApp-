@@ -127,7 +127,6 @@
 				97831FA2273222560035493E /* MovieViewController.swift */,
 				976D1E02274C62BF0032C8A8 /* BigTableViewController.swift */,
 				976D1E06274C8A320032C8A8 /* SmallCollectionViewController.swift */,
-				97FC89B8273CE6920083C927 /* MovieDatabase.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -151,6 +150,7 @@
 			children = (
 				97831FB4273230320035493E /* MovieAPI.swift */,
 				97831FB6273231A30035493E /* AlamofireGet.swift */,
+				97FC89B8273CE6920083C927 /* MovieDatabase.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";

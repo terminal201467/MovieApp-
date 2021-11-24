@@ -35,8 +35,8 @@ class SmallCollectionViewController: UIViewController, UICollectionViewDelegate 
     }
 }
 
+//MARK:-setCollectionView
 extension SmallCollectionViewController:UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movieDataBase.numberOfRowInSection(section)
     }

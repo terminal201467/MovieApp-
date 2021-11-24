@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let setWindow = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: setWindow)
-        self.window?.rootViewController = UINavigationController(rootViewController: MovieViewController())
+        self.window?.rootViewController = UINavigationController(rootViewController: BigTableViewController())
         self.window?.makeKeyAndVisible()
     }
 

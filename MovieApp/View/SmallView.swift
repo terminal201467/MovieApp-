@@ -15,6 +15,7 @@ class SmallView: UIView {
         let layout = UICollectionViewFlowLayout()
         //collectionView
         let collectionView = UICollectionView(frame: .infinite, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         //layout
         layout.itemSize = CGSize(width: 100, height: collectionView.frame.height)
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
