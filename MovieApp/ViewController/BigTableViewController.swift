@@ -15,7 +15,7 @@ class BigTableViewController: UIViewController {
     //MARK:-dataBase
     let movieDataBase = MovieDatabase()
     
-    var controllers = [
+    var smallControllers = [
         SmallCollectionViewController(),
         SmallCollectionViewController(),
         SmallCollectionViewController(),
@@ -30,8 +30,22 @@ class BigTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationBar()
         setTableView()
-        
+        movieDataBase.valueChanged = {
+            DispatchQueue.main.async {
+                self.bigView.tableView.reloadData()
+            }
+        }
+        movieDataBase.onError = { error in
+            print(error)
+        }
+        movieDataBase.loadData()
+    }
+    //MARK:-setNaviagationBar
+    func setNavigationBar(){
+        title = "電影"
+        navigationController?.navigationItem.largeTitleDisplayMode = .automatic
     }
     
     //MARK:-setTableView
@@ -44,7 +58,8 @@ class BigTableViewController: UIViewController {
 //MARK:-setTableViewDelegateDataSource
 extension BigTableViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return controllers.count
+        print(smallControllers.count)
+        return smallControllers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,9 +69,21 @@ extension BigTableViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let photoTableCells = cell as! PhotoTableViewCell
-        self.controllers[indexPath.row].smallView.collectionView.frame = photoTableCells.bounds
-        self.addChild(self.controllers[indexPath.row])
-        self.controllers[indexPath.row].didMove(toParent: self)
-        photoTableCells.addSubview(controllers[indexPath.row].smallView)
+        
+        ///set the smallViewController
+        self.addChild(self.smallControllers[indexPath.row])
+        self.smallControllers[indexPath.row].didMove(toParent: self)
+        
+        photoTableCells.contentView.addSubview(smallControllers[indexPath.row].smallView)
+        
+        smallControllers[indexPath.row].smallView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+            
+        print(smallControllers[indexPath.row].smallView.frame)
+        ///set the smallViewController's view equal to photoTableCell
+//        self.smallControllers[indexPath.row].smallView.collectionView.frame = photoTableCells.bounds
+//        print(photoTableCells.bounds)
+
     }
 }

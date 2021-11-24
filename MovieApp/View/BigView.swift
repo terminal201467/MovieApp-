@@ -24,7 +24,6 @@ class BigView: UIView {
         super.init(frame: frame)
         addSubview(tableView)
         autoLayout()
-        
     }
     
     required init?(coder: NSCoder) {

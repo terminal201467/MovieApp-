@@ -11,7 +11,7 @@ import Kingfisher
 
 class PhotoCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "PhotoCollectionCell"
+    static let reuseidentifier = "PhotoCollectionCell"
     
     var imageView:UIImageView = {
        var imageView = UIImageView()

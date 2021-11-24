@@ -23,6 +23,7 @@ class MovieDatabase {
         MovieAPI.shared.getMovieData(callBy: .releaseDateStart("2019-10-10"),.releaseDateStop("2020-10-10")){ Result in
             switch Result{
             case .success(let movieData):
+                print(movieData)
                 self.movies.append(movieData)
             case .failure(let error):
                 self.onError?(error)
@@ -35,6 +36,7 @@ class MovieDatabase {
     }
     
     func numberOfRowInSection(_ section: Int) -> Int {
+        print("\(String(movies.count))")
         return movies[section].results.count
     }
     

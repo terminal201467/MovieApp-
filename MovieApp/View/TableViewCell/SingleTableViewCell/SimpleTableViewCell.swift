@@ -16,7 +16,6 @@ class SimpleTableViewCell: UITableViewCell {
         layout.itemSize = CGSize(width: 100, height: 100)
         layout.estimatedItemSize = .zero
         layout.minimumInteritemSpacing = 1
-        
         let collectionView = UICollectionView(frame: .infinite, collectionViewLayout: layout)
         collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         return collectionView

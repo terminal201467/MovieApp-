@@ -84,7 +84,7 @@ extension MovieViewController:UICollectionViewDataSource,UICollectionViewDelegat
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.reuseidentifier, for: indexPath) as! PhotoCollectionViewCell
         let movie = database.getMovie(at: indexPath)
         let photo = movie.poster_path
         let url = URL(string: "https://image.tmdb.org/t/p/w500" + photo)!
