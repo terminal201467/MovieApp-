@@ -38,7 +38,6 @@ class MovieViewController: UIViewController {
             print(error)
         }
         database.loadData()
-        
     }
     //MARK:-setNavigationBar
     func setNavigationBar(){
@@ -80,6 +79,7 @@ extension MovieViewController:UICollectionViewDataSource,UICollectionViewDelegat
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        ///why didn't get the data?
         return database.numberOfRowInSection(section)
     }
     

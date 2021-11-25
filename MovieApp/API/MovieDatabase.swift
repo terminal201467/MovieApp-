@@ -12,7 +12,7 @@ class MovieDatabase {
     var onError: ((Error) -> Void)?
     var valueChanged: (() -> Void)?
     
-    private var movies:[MovieData] = [] {
+     var movies:[MovieData] = [] {
         didSet {
             valueChanged?()
         }
@@ -23,7 +23,6 @@ class MovieDatabase {
         MovieAPI.shared.getMovieData(callBy: .releaseDateStart("2019-10-10"),.releaseDateStop("2020-10-10")){ Result in
             switch Result{
             case .success(let movieData):
-                print(movieData)
                 self.movies.append(movieData)
             case .failure(let error):
                 self.onError?(error)
@@ -34,10 +33,11 @@ class MovieDatabase {
     var numberOfSection: Int {
         return movies.count
     }
-    
+    ///網路請求後，再把數據給主執行緒去渲染畫面
     func numberOfRowInSection(_ section: Int) -> Int {
-        print("\(String(movies.count))")
-        return movies[section].results.count
+        print("接收的資料數：\(String(movies.count))")
+        return movies.count == 0 ? 0 : movies[section].results.count
+        
     }
     
     func getMovie(at indexPath: IndexPath) -> MovieData.Result {

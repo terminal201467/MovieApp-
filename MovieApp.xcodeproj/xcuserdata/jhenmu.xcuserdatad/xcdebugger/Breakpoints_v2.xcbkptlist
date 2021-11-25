@@ -7,210 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "84E14FF3-B161-40CD-9024-532F4AA7038E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MovieApp/ViewController/SmallCollectionViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B3040665-8325-4C9C-8B1F-29115D07BBBF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MovieApp/ViewController/SmallCollectionViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2E558A8C-AF5B-422F-A17E-F89982E6704D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MovieApp/ViewController/SmallCollectionViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "136BAC5C-6525-428F-96C7-E348C69504E7"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MovieApp/ViewController/SmallCollectionViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3B9E2F45-DF64-46A2-9D6B-40A9D74B01D7"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MovieApp/ViewController/BigTableViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "smallControllers"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "3B9E2F45-DF64-46A2-9D6B-40A9D74B01D7 - 763e05c26105551c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieApp.BigTableViewController.smallControllers.getter : Swift.Array&lt;MovieApp.SmallCollectionViewController&gt;"
-                  moduleName = "MovieApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jhenmu/Desktop/MovieApp/MovieApp/ViewController/BigTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "108">
-               </Location>
-               <Location
-                  uuid = "3B9E2F45-DF64-46A2-9D6B-40A9D74B01D7 - 370ae1549d38a510"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieApp.BigTableViewController.smallControllers.setter : Swift.Array&lt;MovieApp.SmallCollectionViewController&gt;"
-                  moduleName = "MovieApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jhenmu/Desktop/MovieApp/MovieApp/ViewController/BigTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "128">
-               </Location>
-               <Location
-                  uuid = "3B9E2F45-DF64-46A2-9D6B-40A9D74B01D7 - 5d8c236a22454337"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieApp.BigTableViewController.smallControllers.modify : Swift.Array&lt;MovieApp.SmallCollectionViewController&gt;"
-                  moduleName = "MovieApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jhenmu/Desktop/MovieApp/MovieApp/ViewController/BigTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  uuid = "3B9E2F45-DF64-46A2-9D6B-40A9D74B01D7 - 633512c47abce32d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieApp.BigTableViewController.smallControllers.modify : Swift.Array&lt;MovieApp.SmallCollectionViewController&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "MovieApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jhenmu/Desktop/MovieApp/MovieApp/ViewController/BigTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  uuid = "3B9E2F45-DF64-46A2-9D6B-40A9D74B01D7 - 820cc8c481a3fc1a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieApp.BigTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; MovieApp.BigTableViewController"
-                  moduleName = "MovieApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jhenmu/Desktop/MovieApp/MovieApp/ViewController/BigTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "212">
-               </Location>
-               <Location
-                  uuid = "3B9E2F45-DF64-46A2-9D6B-40A9D74B01D7 - 291babfb830a5911"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieApp.BigTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;MovieApp.BigTableViewController&gt;"
-                  moduleName = "MovieApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jhenmu/Desktop/MovieApp/MovieApp/ViewController/BigTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "188">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "20360FE5-214C-4C61-9C16-39B532FA2DC9"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MovieApp/ViewController/BigTableViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "smallControllers"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FF21CBBD-FDD2-4B39-8A8E-A99BB1713C46"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MovieApp/ViewController/BigTableViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "E2E893E8-DCB9-4E23-B795-3C0A250CF134"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -413,6 +209,38 @@
             startingLineNumber = "76"
             endingLineNumber = "76"
             landmarkName = "getMovieData(callBy:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "79B73855-E437-4BBB-A6DB-45ECE687D12C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/API/MovieDatabase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "numberOfRowInSection(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "68251387-8203-4ADD-98B3-7A862B122F38"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/ViewController/SmallCollectionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
